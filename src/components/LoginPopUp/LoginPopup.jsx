@@ -4,13 +4,11 @@ import {useState} from 'react'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
-import {toast, ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginPopup = ({setShowLogin}) => {
 
-  const {url, setToken} = useContext(StoreContext)
+  const {url, setToken, fetchUserData} = useContext(StoreContext)
 
   const[currState, setCurrState] = useState("Login")
   const[data, setData] = useState({
@@ -41,17 +39,18 @@ try{
     if(response.data.success){
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
-      toast.success(currState==="Login"? "Logged In Successfully":"Account Created Successfully");
+      await fetchUserData(response.data.token);
+      console.log(currState==="Login"? "Logged In Successfully":"Account Created Successfully");
       setTimeout(() => {
         setShowLogin(false); 
       }, 1500); 
     }
     else{
-      toast.error(response.data.message || "Something went wrong");
+      console.log(response.data.message || "Something went wrong");
     }
   }catch(error){
     console.error(err);
-    toast.error("Server error. Please try again later.");
+    console.log("Server error. Please try again later.");
     
   }
 };
@@ -79,7 +78,6 @@ try{
               }
           
       </form>
-      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   )
 }

@@ -1,64 +1,153 @@
-.explore-menu{
-    display: flex;
-   flex-direction: column;
-   gap: 20px;
-   
+.browse-range {
+    padding: 56px 0;
+    text-align: center;
+    background-color: #FFFFFF;
+}
 
+.browse-range-header {
+    margin-bottom: 62px;
 }
-.explore-menu h1{
-    color: #262626;
-    font-weight: 500;
+
+.browse-range-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 8px;
+    line-height: 48px;
 }
-.explore-menu-text{
-    max-width: 60%;
-   columns: #808080;
+
+.browse-range-header p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 30px;
 }
-.explore-menu-list{
-    display: flex;  
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-   text-align: center;
-   margin: 20px 0px;
-   overflow-x: scroll;
-   cursor: pointer;
+
+.range-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1183px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.explore-menu-list::-webkit-scrollbar{
-    display: none;
-}
-.explorer-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
+
+.range-category {
+    flex: 1;
+    max-width: 381px;
     cursor: pointer;
-    transition: 0.2s;
-    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.range-category:hover {
+    transform: translateY(-5px);
+}
+
+.category-image {
+    width: 100%;
+    height: 480px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.range-category:hover .category-image img {
+    transform: scale(1.05);
+}
+
+.category-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+    line-height: 36px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .range-categories {
+        gap: 15px;
+        padding: 0 15px;
+    }
     
-}
-.explore-menu-list-item p{
-    margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw, 16px);
-    cursor: pointer;    
-}
-.explore-menu hr{
-    margin: -10px 0px;
-    height: 2px;
-    background-color: #e2e2e2;
-    border: none;
-}
-.explore-menu-list-item .active{
-    border: 4px solid #6900FE;
-    padding: 2px;
-    border-radius: 50%;
-    cursor: pointer;
+    .category-image {
+        height: 400px;
+    }
     
-}
-@media (max-width: 1050px){
-    .explore-menu-text{
-        max-width: 100%;
-        font-size: 14px;
+    .category-name {
+        font-size: 22px;
     }
 }
 
+@media (max-width: 768px) {
+    .browse-range {
+        padding: 40px 0;
+    }
     
+    .browse-range-header {
+        margin-bottom: 40px;
+    }
     
+    .browse-range-header h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .browse-range-header p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .range-categories {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .range-category {
+        max-width: 100%;
+    }
+    
+    .category-image {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .category-name {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .browse-range {
+        padding: 30px 0;
+    }
+    
+    .browse-range-header h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .browse-range-header p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    
+    .category-image {
+        height: 250px;
+    }
+    
+    .category-name {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

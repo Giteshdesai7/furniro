@@ -9,6 +9,7 @@
 }
 body{
   min-height: 100vh;
+  overflow-x: hidden;
 
 }
 a{
@@ -16,8 +17,25 @@ a{
   color:inherit;
 }
 .app{
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  margin: 0;
+}
+
+/* Override for full-width components */
+.header {
+  width: 100% !important;
+}
+
+.product-display {
+  width: 100% !important;
+}
+
+.explore-more {
+  width: 100% !important;
+}
+
+.share-your-setup {
+  width: 100%;
 }
 @keyframes fadeIn{
   0%{
@@ -26,4 +44,41 @@ a{
   100%{
     opacity: 1;
   }
+}
+
+/* Global responsive utilities */
+.container{
+  width: 100%;
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img, video{
+  max-width: 100%;
+  height: auto;
+}
+
+.grid{
+  display: grid;
+  gap: 24px;
+}
+
+/* Breakpoints */
+@media (max-width: 1200px){
+  .container{ max-width: 1040px; padding: 0 16px; }
+}
+@media (max-width: 1024px){
+  html{ font-size: 15px; }
+}
+@media (max-width: 900px){
+  html{ font-size: 14px; }
+}
+@media (max-width: 768px){
+  html{ font-size: 13.5px; }
+  .app{ overflow-x: hidden; }
+}
+@media (max-width: 640px){
+  html{ font-size: 13px; }
+  .container{ padding: 0 12px; }
 }

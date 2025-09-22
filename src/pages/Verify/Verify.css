@@ -1,13 +1,13 @@
 .verify{
     min-height: 60vh;
-    display:grid'
+    display: grid;
 }
 .verify .spinner{
     width:100px;
     height:100px;
-    placce-self: center;
+    place-self: center;
     border:5px solid #bdbdbd;
-    border-top-color: #6900FE;
+    border-top-color: #B88E2F;
     border-radius: 50%;
     animation: rotate 1s infinite;
     align-self: center;

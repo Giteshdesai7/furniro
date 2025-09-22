@@ -5,20 +5,20 @@ const Header = () => {
    const navigate = useNavigate();
   return (
     <div className="header" >
-        <div className="header-contents">
-            <h2>Order your favourite food Here</h2>
-            <p>
-                Choose from a diverse menu a delectable array of dishes crafted with the finest ingredients and culinary expertise, one delicious meal at a time. try our latest dishes and enjoy the taste of the finest ingredients. let us know what you think. And We really Hope you enjoy our food.
-            </p>
-           
-            <button  onClick={() => {const menuSection = document.getElementById("explore-menu");
+        <div className="header-content">
+            <div className="header-text">
+                <p className="header-subtitle">New Arrival</p>
+                <h1 className="header-title">Discover Our<br />New Collection</h1>
+                <p className="header-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                </p>
+                <button className="header-btn" onClick={() => {const menuSection = document.getElementById("explore-menu");
   if (menuSection) {
     menuSection.scrollIntoView({ behavior: "smooth" });
   }
-}}>View Menu</button>
-            
+}}>BUY NOW</button>
+            </div>
         </div>
-
     </div>
   )
 }

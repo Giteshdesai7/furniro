@@ -1,27 +1,32 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './ExploreMenu.css'
-import {menu_list} from '../../assets/assets'
-const ExploreMenu = ({category, setCategory}) => {
+import { range_list } from '../../assets/assets'
 
+const ExploreMenu = ({ category, setCategory }) => {
   return (
-        <div className="explore-menu" id='explore-menu'> 
-            <h1>Explore Our Menu</h1>
-            <p className='explore-menu-text'>
-                Choose from a diverse menu a delectable array of dishes crafted with the finest ingredients and Culinary expertise, one delicious meal at a time.
-            </p>
-            <div className="explore-menu-list">
-                {menu_list.map((item, index) => {
-                    return (
-                               <div onClick={()=> setCategory(prev=>prev===item.menu_name?"All":item.menu_name)}key={index} className="explore-menu-list-item">
-                                 <img className={category===item.menu_name?"active":""}src={item.menu_image} alt="" />
-                                 <p> {item.menu_name}</p>
-                                </div>
-                             )
-                    })}
+    <div className="browse-range" id='explore-menu'>
+      <div className="browse-range-header">
+        <h2>Browse The Range</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      
+      <div className="range-categories">
+        {range_list.map((item, index) => {
+          return (
+            <div 
+              key={index} 
+              className="range-category"
+              onClick={() => setCategory(prev => prev === item.category_name ? "All" : item.category_name)}
+            >
+              <div className="category-image">
+                <img src={item.category_image} alt={item.category_name} />
+              </div>
+              <h3 className="category-name">{item.category_name}</h3>
             </div>
-            <hr />
-          </div>
-
+          )
+        })}
+      </div>
+    </div>
   )
 }
 

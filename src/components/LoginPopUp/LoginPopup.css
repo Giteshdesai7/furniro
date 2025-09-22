@@ -42,7 +42,7 @@
     border-radius: 4px;
 }
 .login-popup-container button{
-    background-color: #6900FE;
+    background-color: #B88E2F;
     color: white;
     border: none;
     padding: 10px;
@@ -61,7 +61,7 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
-    accent-color: #6900FE;
+    accent-color: #B88E2F;
     
 
 }
@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 .login-popup p span{
-    color: #6900FE;
+    color: #B88E2F;
     font-weight: 500;
     cursor: pointer;
 }

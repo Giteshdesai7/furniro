@@ -12,17 +12,29 @@ const Verify = () => {
     const[searchParams, setSearchParams] = useSearchParams();
     const success=searchParams.get("success")
     const orderId=searchParams.get("orderId")
+    const paymentMethod=searchParams.get("paymentMethod")
     const {url}= useContext(StoreContext);
     const navigate = useNavigate();
+    
     const verifyPayment = async()=>{
-        const response =await axios.post(url+"/api/order/verify",{success, orderId});
-        if (response.data.success) {
-            navigate("/myorders");
-        }
-        else{
-            navigate("/");
+        if (paymentMethod === "cash-on-delivery") {
+            // For Cash on Delivery orders, no payment verification needed
+            // Just redirect to orders page after a short delay
+            setTimeout(() => {
+                navigate("/myorders");
+            }, 2000);
+        } else {
+            // For prepaid orders, verify payment with backend
+            const response =await axios.post(url+"/api/order/verify",{success, orderId});
+            if (response.data.success) {
+                navigate("/myorders");
+            }
+            else{
+                navigate("/");
+            }
         }
     }
+    
     useEffect(()=>{
         verifyPayment();
     },[])

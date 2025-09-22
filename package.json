@@ -1,5 +1,5 @@
 {
-  "name": "tastygo",
+  "name": "furniro",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,9 +15,7 @@
     "razorpay": "^2.9.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.5.2",
-    "react-toastify": "^11.0.5",
-    "react-toasty": "^0.0.4"
+    "react-router-dom": "^7.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
